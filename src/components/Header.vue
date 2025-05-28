@@ -4,7 +4,7 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
 
 <template>
   <header class="py-4">
-    <div class="flex items-center justify-between container mx-40">
+    <div class="flex items-center justify-between container">
       <div class="flex items-center gap-15">
         <img src="./icons/Logo.png" alt="Cyber Logo" class="" />
         <div class="relative">

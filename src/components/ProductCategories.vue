@@ -1,6 +1,6 @@
 <template>
   <div class="bg-[#FAFAFA]">
-    <div class="container mx-auto">
+    <div class="container">
       <div class="flex justify-between mb-10">
         <p class="text-2xl font-bold">Browse By Category</p>
         <div class="flex">

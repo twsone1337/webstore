@@ -4,15 +4,14 @@ export default {
     container: {
       center: true,
       padding: '1rem',
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1120px',
-        '2xl': '1120px',
-      },
+    },
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1220px', // вот здесь задаётся max-width для .container
+      xl: '1220px',
+      '2xl': '1220px',
     },
   },
-
   plugins: [],
 };

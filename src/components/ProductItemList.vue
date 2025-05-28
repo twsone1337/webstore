@@ -1,6 +1,6 @@
 <template>
   <div class="py-14">
-    <div class="container mx-auto">
+    <div class="container">
       <ul class="flex gap-5 text-[20px]">
         <li class="border-b-3">New Arrival</li>
         <li class="text-[#8B8B8B]">Bestseller</li>
