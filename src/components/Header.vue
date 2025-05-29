@@ -6,25 +6,21 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
   <header class="py-4">
     <div class="flex items-center justify-between container">
       <div class="flex items-center gap-15">
-        <img
-          src="/src/assets/icons/Logo Vector.svg"
-          alt="Cyber Logo"
-          class="fill-black text-black bg-gray-500"
-        />
+        <img src="/src/assets/icons/Logo.png" alt="Cyber Logo" />
         <div class="relative">
           <Search
             class="absolute left-4 top-1/2 -translate-y-1/2 text-[#989898]"
           />
           <input
             placeholder="Search"
-            class="bg-[#F5F5F5] rounded-xl w-[500px] pl-12 py-4"
+            class="bg-[#F5F5F5] rounded-xl pl-12 py-4 pr-30"
             type="text"
           />
         </div>
       </div>
 
       <div>
-        <ul class="flex gap-20 text-gray-400 font-medium">
+        <ul class="flex gap-15 text-gray-400 font-medium">
           <li class="text-black">Home</li>
           <li>About</li>
           <li>Contact Us</li>

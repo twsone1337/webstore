@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-4">
     <div class="col-span-4 bg-[#211C24] h-[600px] px-40">
-      <div class="flex justify-between items-center">
+      <div class="flex justify-between items-center container">
         <div>
           <p class="text-white opacity-40 text-3xl">Pro.Beyond.</p>
           <p class="text-white text-[96px]">

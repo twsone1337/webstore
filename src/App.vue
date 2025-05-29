@@ -4,6 +4,7 @@
   <ProductItemList />
   <ProductCategories />
   <Footer />
+  <ProductDetailsPage />
 </template>
 
 <style scoped>
@@ -19,4 +20,5 @@ import Header from './components/Header.vue';
 import PresentationCards from './components/PresentationCards.vue';
 import ProductCategories from './components/ProductCategories.vue';
 import ProductItemList from './components/ProductItemList.vue';
+import ProductDetailsPage from './views/ProductDetailsPage.vue';
 </script>
