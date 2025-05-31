@@ -30,4 +30,5 @@ const fetchProducts = async () => {
 onMounted(() => {
   fetchProducts();
 });
+console.log(products.value);
 </script>

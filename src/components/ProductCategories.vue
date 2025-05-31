@@ -10,10 +10,10 @@
       </div>
       <div class="grid grid-cols-6 gap-8">
         <div
-        v-for="(icon, index) in icons"
+          v-for="(icon, index) in icons"
           class="bg-[#EDEDED] rounded-md flex justify-center items-center px-14 py-6"
         >
-          <div class="">
+          <div>
             <component :is="icon.icon" class="mx-auto size-12 mb-2" />
             <span class="text-base">Phones</span>
           </div>
@@ -35,31 +35,30 @@ import {
   Watch,
 } from 'lucide-vue-next';
 
-
 const icons = [
   {
     name: 'Phones',
-    icon: Smartphone
+    icon: Smartphone,
   },
   {
     name: 'Watches',
-    icon: Watch
+    icon: Watch,
   },
   {
     name: 'Cameras',
-    icon: Camera
+    icon: Camera,
   },
   {
     name: 'Headphones',
-    icon: Headphones
+    icon: Headphones,
   },
   {
     name: 'Computers',
-    icon: Monitor
+    icon: Monitor,
   },
   {
     name: 'Gaming',
-    icon: Gamepad
+    icon: Gamepad,
   },
-]
+];
 </script>
