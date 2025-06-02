@@ -32,13 +32,15 @@
         <div class="flex gap-5 items-center">
           <p>Select color :</p>
           <div
-            v-for="color in colors"
-            :key="color.id"
+            v-for="(color, index) in colors"
+            :key="index"
             :style="{ backgroundColor: color.color }"
-            @click="selectedColor = color.id"
-            class="rounded-full w-8 h-8 cursor-pointer border-2"
+            @click="selectedColor = index"
+            class="rounded-full w-8 h-8 cursor-pointer outline-2 outline-offset-2"
             :class="
-              selectedColor === color.id ? 'border-black' : 'border-transparent'
+              selectedColor === index
+                ? 'outline-blue-500'
+                : 'outline-transparent'
             "
           ></div>
         </div>
@@ -54,26 +56,22 @@ import { ref } from 'vue';
 
 const colors = [
   {
-    id: 1,
     color: '#000000',
   },
   {
-    id: 2,
     color: '#781DBC',
   },
   {
-    id: 3,
     color: '#E10000',
   },
   {
-    id: 4,
     color: '#E1B000',
   },
   {
-    id: 5,
     color: '#E8E8E8',
   },
 ];
 
-const selectedColor = ref(colors[0].id);
+const selectedColor = ref(0);
+console.log(selectedColor.value);
 </script>

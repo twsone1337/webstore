@@ -1,24 +1,10 @@
 <template>
   <Header />
-  <PresentationCards />
-  <ProductItemList />
-  <ProductCategories />
+  <RouterView />
   <Footer />
-  <ProductDetailsPage />
 </template>
 
-<style scoped>
-/* 
-
-
-
- */
-</style>
 <script setup>
 import Footer from './components/Footer.vue';
 import Header from './components/Header.vue';
-import PresentationCards from './components/PresentationCards.vue';
-import ProductCategories from './components/ProductCategories.vue';
-import ProductItemList from './components/ProductItemList.vue';
-import ProductDetailsPage from './views/ProductDetailsPage.vue';
 </script>
