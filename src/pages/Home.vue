@@ -11,5 +11,3 @@ import PresentationCards from '@/components/PresentationCards.vue';
 import ProductCategories from '@/components/ProductCategories.vue';
 import ProductItemList from '@/components/ProductItemList.vue';
 </script>
-
-<style scoped></style>
