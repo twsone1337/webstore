@@ -15,7 +15,7 @@
         >
           <div>
             <component :is="icon.icon" class="mx-auto size-12 mb-2" />
-            <span class="text-base">Phones</span>
+            <span class="text-base">{{ icon.name }}</span>
           </div>
         </div>
       </div>

@@ -21,11 +21,11 @@
         </div>
         <div class="col-span-5">
           <p class="text-3xl font-bold">Apple iPhone 14 Pro Max</p>
-          <div class="flex gap-5">
+          <div class="flex gap-5 mt-5 items-center">
             <p class="text-2xl">$1399</p>
-            <p class="line-through text-[#A0A0A0]">$1499</p>
+            <p class="line-through text-[#A0A0A0] text-xl">$1499</p>
           </div>
-          <div class="flex gap-5 items-center">
+          <div class="flex gap-5 items-center mt-5">
             <p>Select color :</p>
             <div
               v-for="(color, index) in colors"
@@ -40,12 +40,51 @@
               "
             ></div>
           </div>
+          <div class="flex justify-between gap-5 mt-5">
+            <div
+              v-for="(item, index) in memoryCapacity"
+              class="border-2 px-6 py-4 rounded-xl cursor-pointer"
+              :class="
+                selectedCapacity === index ? 'border-black' : 'border-[#D5D5D5]'
+              "
+              @click="selectedCapacity = index"
+            >
+              <p
+                :class="
+                  selectedCapacity === index ? 'text-black' : 'text-[#6F6F6F]'
+                "
+              >
+                {{ item.value }}
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-3 grid-rows-2 gap-5 mt-5">
+            <div
+              class="bg-[#F4F4F4] py-2 px-4 flex items-center gap-2"
+              v-for="(icon, index) in icons"
+            >
+              <div class="flex">
+                <component :is="icon.icon" />
+              </div>
+              <div>
+                <p class="text-[#A7A7A7]">{{ icon.name }}</p>
+                <p class="text-[#4E4E4E]">{{ icon.value }}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script setup>
+import {
+  BatteryMedium,
+  Camera,
+  Cpu,
+  Smartphone,
+  SwitchCamera,
+} from 'lucide-vue-next';
 import { ref } from 'vue';
 
 const colors = [
@@ -65,7 +104,56 @@ const colors = [
   },
 ];
 
+const memoryCapacity = [
+  {
+    value: '128GB',
+  },
+  {
+    value: '256GB',
+  },
+  {
+    value: '512GB',
+  },
+  {
+    value: '1TB',
+  },
+];
+
+const icons = [
+  {
+    name: 'Screen size',
+    value: '6.7"',
+    icon: Smartphone,
+  },
+  {
+    name: 'CPU',
+    value: '4323 mAh',
+    icon: Cpu,
+  },
+  {
+    name: 'Number of Cores',
+    value: '6',
+    icon: Cpu,
+  },
+  {
+    name: 'Main camera',
+    value: '4323 mAh',
+    icon: Camera,
+  },
+  {
+    name: 'Front-camera',
+    value: '12 MP',
+    icon: SwitchCamera,
+  },
+  {
+    name: 'Battery capacity',
+    value: '4323 mAh',
+    icon: BatteryMedium,
+  },
+];
+
 const selectedColor = ref(0);
 const selectedImage = ref(0);
+const selectedCapacity = ref(0);
 console.log(selectedColor.value);
 </script>
