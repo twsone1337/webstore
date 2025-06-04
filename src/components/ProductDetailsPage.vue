@@ -12,20 +12,20 @@
             alt="IphonePurpler"
           />
         </div>
-        <div class="col-span-6">
+        <div class="col-span-5">
           <img
             :src="colors[selectedColor].images[selectedImage]"
             alt="IphonePurpler"
             class="aspect-[9/12] object-cover"
           />
         </div>
-        <div class="col-span-5">
+        <div class="col-span-6 space-y-5">
           <p class="text-3xl font-bold">Apple iPhone 14 Pro Max</p>
-          <div class="flex gap-5 mt-5 items-center">
+          <div class="flex gap-5 items-center">
             <p class="text-2xl">$1399</p>
             <p class="line-through text-[#A0A0A0] text-xl">$1499</p>
           </div>
-          <div class="flex gap-5 items-center mt-5">
+          <div class="flex gap-5 items-center">
             <p>Select color :</p>
             <div
               v-for="(color, index) in colors"
@@ -40,10 +40,10 @@
               "
             ></div>
           </div>
-          <div class="flex justify-between gap-5 mt-5">
+          <div class="grid grid-cols-4 gap-5">
             <div
               v-for="(item, index) in memoryCapacity"
-              class="border-2 px-6 py-4 rounded-xl cursor-pointer"
+              class="border-2 px-6 py-4 rounded-xl cursor-pointer text-center"
               :class="
                 selectedCapacity === index ? 'border-black' : 'border-[#D5D5D5]'
               "
@@ -58,17 +58,46 @@
               </p>
             </div>
           </div>
-          <div class="grid grid-cols-3 grid-rows-2 gap-5 mt-5">
+          <div class="grid grid-cols-3 grid-rows-2 gap-5">
             <div
-              class="bg-[#F4F4F4] py-2 px-4 flex items-center gap-2"
-              v-for="(icon, index) in icons"
+              class="bg-[#F4F4F4] py-2 px-4 flex items-center gap-2 rounded-md"
+              v-for="(icon, index) in charIcons"
             >
               <div class="flex">
-                <component :is="icon.icon" />
+                <component :is="icon.icon" class="size-5 stroke-2" />
               </div>
               <div>
-                <p class="text-[#A7A7A7]">{{ icon.name }}</p>
-                <p class="text-[#4E4E4E]">{{ icon.value }}</p>
+                <p class="text-[#A7A7A7] text-[14px]">
+                  {{ icon.name }}
+                </p>
+                <p class="text-[#4E4E4E] text-[14px]">{{ icon.value }}</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="text-[#6C6C6C] text-[14px] leading-6">
+              Enhanced capabilities thanks toan enlarged display of 6.7
+              inchesand work without rechargingthroughout the day. Incredible
+              photosas in weak, yesand in bright lightusing the new systemwith
+              two cameras <b class="underline underline-offset-2">more...</b>
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-5">
+            <button class="bg-[#FFFFFF] border py-4 px-18 rounded">
+              <p>Add to Wishlist</p>
+            </button>
+            <button class="bg-black border py-4 px-18 rounded">
+              <p class="text-white">Add to Cart</p>
+            </button>
+          </div>
+          <div class="flex justify-between">
+            <div v-for="icon in shopIcons" class="flex items-center gap-4">
+              <div class="bg-[#F6F6F6] rounded-xl p-4">
+                <component :is="icon.icon" class="stroke-1 stroke-[#797979]" />
+              </div>
+              <div class="text-[14px]">
+                <p class="text-[#717171]">{{ icon.name }}</p>
+                <p>{{ icon.value }}</p>
               </div>
             </div>
           </div>
@@ -82,8 +111,11 @@ import {
   BatteryMedium,
   Camera,
   Cpu,
+  ShieldCheck,
   Smartphone,
+  Store,
   SwitchCamera,
+  Truck,
 } from 'lucide-vue-next';
 import { ref } from 'vue';
 
@@ -119,7 +151,7 @@ const memoryCapacity = [
   },
 ];
 
-const icons = [
+const charIcons = [
   {
     name: 'Screen size',
     value: '6.7"',
@@ -149,6 +181,24 @@ const icons = [
     name: 'Battery capacity',
     value: '4323 mAh',
     icon: BatteryMedium,
+  },
+];
+
+const shopIcons = [
+  {
+    name: 'Free Delivery',
+    value: '1-2 day',
+    icon: Truck,
+  },
+  {
+    name: 'In Stock',
+    value: 'Today',
+    icon: Store,
+  },
+  {
+    name: 'Guaranteed',
+    value: '1 year',
+    icon: ShieldCheck,
   },
 ];
 

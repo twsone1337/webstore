@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import ProductDetailsPage from '@/views/ProductDetailsPage.vue';
+import ProductDetailsPage from '@/components/ProductDetailsPage.vue';
 </script>

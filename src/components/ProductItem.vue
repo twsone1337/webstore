@@ -15,7 +15,6 @@
         <p class="text-2xl font-bold mt-3">${{ product.price }}</p>
 
         <button
-          @click="addToCart"
           class="hover:opacity-50 transition cursor-pointer border bg-black rounded-md p-3 w-full mt-6"
         >
           <p class="text-white">Buy Now</p>
@@ -40,6 +39,4 @@ type Props = {
   product: Product;
 };
 const { product } = defineProps<Props>();
-
-const addToCart = () => alert('Added');
 </script>
