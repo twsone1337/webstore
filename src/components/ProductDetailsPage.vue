@@ -107,6 +107,7 @@
   </div>
 </template>
 <script setup>
+import { useCartStore } from '@/stores/cart';
 import {
   BatteryMedium,
   Camera,
@@ -118,6 +119,8 @@ import {
   Truck,
 } from 'lucide-vue-next';
 import { ref } from 'vue';
+
+const { cart, addToCart } = useCartStore();
 
 const colors = [
   {

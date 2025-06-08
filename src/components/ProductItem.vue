@@ -16,6 +16,7 @@
 
         <button
           class="hover:opacity-50 transition cursor-pointer border bg-black rounded-md p-3 w-full mt-6"
+          @click.stop.prevent="addToCart(product)"
         >
           <p class="text-white">Buy Now</p>
         </button>
@@ -25,8 +26,11 @@
 </template>
 
 <script setup lang="ts">
+import { useCartStore } from '@/stores/cart';
 import { Product } from '@/types/products';
-import { Heart } from 'lucide-vue-next';
+import { ArrowDownToDot, Heart } from 'lucide-vue-next';
+
+const { addToCart } = useCartStore();
 
 // const props = defineProps({
 //   product: {

@@ -31,7 +31,9 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
       </div>
       <div class="flex gap-10">
         <Heart class="" />
-        <ShoppingCart class="" />
+        <router-link to="/cart">
+          <ShoppingCart class="" />
+        </router-link>
         <User class="" />
       </div>
     </div>
