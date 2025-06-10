@@ -1,6 +1,6 @@
 <template>
-  <div class="container grid grid-cols-2">
-    <div class="space-y-6 p-4">
+  <div class="container grid grid-cols-2 gap-5">
+    <div class="space-y-6">
       <p class="text-2xl font-bold">Shopping Cart</p>
       <div
         v-for="(product, index) in cartStore.cart"
@@ -31,7 +31,10 @@
               </button>
             </div>
             <b class="text-lg">${{ product.price * product.quantity }}</b>
-            <button class="p-2 cursor-pointer" @click="cartStore.deleteFromCart(index)">
+            <button
+              class="p-2 cursor-pointer"
+              @click="cartStore.deleteFromCart(index)"
+            >
               X
             </button>
           </div>
@@ -51,15 +54,38 @@
         </div>
         <div>
           <p class="text-[#545454]">Your bonus card number</p>
-          <input
-            type="text"
-            class="p-4 border border-[#9F9F9F] rounded w-full"
-            placeholder="Enter Card Number"
-          />
+          <div class="relative">
+            <input
+              type="text"
+              class="p-4 border border-[#9F9F9F] rounded w-full"
+              placeholder="Enter Card Number"
+            />
+            <button
+              class="absolute border py-2 px-6 rounded-md top-2.5 right-4"
+            >
+              <p class="text-sm">Apply</p>
+            </button>
+          </div>
         </div>
         <div>
-          <p>Subtotal</p>
-          <p>Total ${{ cartStore.totalPrice }}</p>
+          <div class="flex justify-between">
+            <p class="font-bold">Subtotal</p>
+            <div class="font-bold">${{ cartStore.totalPrice }}</div>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-[#545454]">Estimated Tax</p>
+          <b>$30</b>
+        </div>
+        <div class="flex justify-between">
+          <p class="text-[#545454]">Estimated shipping & Handling</p>
+          <b>$50</b>
+        </div>
+        <div>
+          <div class="flex justify-between">
+            <p class="font-bold">Total</p>
+            <div class="font-bold">${{ cartStore.totalPrice }}</div>
+          </div>
         </div>
       </div>
     </div>
