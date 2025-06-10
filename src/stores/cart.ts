@@ -1,8 +1,14 @@
 import { defineStore } from 'pinia';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 export const useCartStore = defineStore('cart', () => {
   const cart = ref([]);
+  const totalPrice = computed(() => {
+    return cart.value.reduce(
+      (acc, curr) => acc + curr.price * curr.quantity,
+      0
+    );
+  });
 
   function addToCart(product) {
     const itemInCart = cart.value.find((i) => i.id === product.id);
@@ -37,6 +43,7 @@ export const useCartStore = defineStore('cart', () => {
     deleteFromCart,
     incrementQuantity,
     decrementQuantity,
+    totalPrice,
   };
 });
 // деструктуризация, спред (...) и find

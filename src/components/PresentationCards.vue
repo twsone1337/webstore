@@ -1,6 +1,6 @@
 <template>
   <div class="grid grid-cols-4">
-    <div class="col-span-4 bg-[#211C24] h-[600px] px-40">
+    <div class="col-span-4 bg-[#211C24] px-40">
       <div class="flex justify-between items-center container">
         <div>
           <p class="text-white opacity-40 text-3xl">Pro.Beyond.</p>
@@ -20,7 +20,7 @@
         <img src="/src/assets/images/Iphone Image.png" alt="IphoneImage" />
       </div>
     </div>
-    <div class="col-span-2 bg-gray-200 h-[600px]">
+    <div class="col-span-2 bg-gray-200">
       <div class="grid grid-cols-2">
         <div class="col-span-2 bg-[#FFFFFF] h-[300px]">
           <div class="flex items-center">
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 bg-[#EDEDED] h-[300px]">
+        <div class="col-span-1 bg-[#EDEDED]">
           <div class="flex items-center my-5">
             <img
               src="/src/assets/images/AirPods Image.png"
@@ -53,9 +53,7 @@
             </div>
           </div>
         </div>
-        <div
-          class="col-span-1 bg-[#353535] h-[300px] grid grid-cols-2 items-center"
-        >
+        <div class="col-span-1 bg-[#353535] grid grid-cols-2 items-center">
           <img
             class=""
             src="/src/assets/images/AppleVR Image.png"
@@ -77,9 +75,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="col-span-2 bg-[#EDEDED] h-[600px] flex items-center justify-between"
-    >
+    <div class="col-span-2 bg-[#EDEDED] flex items-center justify-between">
       <div class="p-14">
         <p class="text-6xl text-black font-extralight">
           Macbook <br /><b class="font-bold my-3">Air</b>
