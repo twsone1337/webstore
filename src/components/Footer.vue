@@ -18,7 +18,7 @@ import { Facebook, Instagram, Twitter } from 'lucide-vue-next';
           </p>
         </div>
         <div>
-          <ul class="text-[#CFCFCF]">
+          <ul class="text-[#CFCFCF] space-y-5">
             <li class="text-white font-bold text-lg">Services</li>
             <li>Bonus program</li>
             <li>Gift cards</li>
@@ -29,7 +29,7 @@ import { Facebook, Instagram, Twitter } from 'lucide-vue-next';
           </ul>
         </div>
         <div>
-          <ul class="text-[#CFCFCF]">
+          <ul class="text-[#CFCFCF] space-y-5">
             <li class="text-white font-bold text-lg">
               Assistance to the buyer
             </li>
@@ -43,10 +43,10 @@ import { Facebook, Instagram, Twitter } from 'lucide-vue-next';
         </div>
       </div>
       <div class="flex gap-10">
-        <Twitter class="fill-white" />
-        <Facebook class="fill-white" />
-        <Twitter class="fill-white" />
-        <Instagram class="fill-white" />
+        <Twitter class="fill-white cursor-pointer" />
+        <Facebook class="fill-white cursor-pointer" />
+        <Twitter class="fill-white cursor-pointer" />
+        <Instagram class="fill-white cursor-pointer" />
       </div>
     </div>
   </div>

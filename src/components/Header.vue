@@ -3,7 +3,7 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
 </script>
 
 <template>
-  <header class="py-4">
+  <header class="py-4 border border-[#B5B5B5]">
     <div class="flex items-center justify-between container">
       <div class="flex items-center gap-15">
         <router-link to="/"
@@ -23,10 +23,14 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
 
       <div>
         <ul class="flex gap-15 text-gray-400 font-medium">
-          <li class="text-black">Home</li>
-          <li>About</li>
-          <li>Contact Us</li>
-          <li>Blog</li>
+          <router-link to="/"
+            ><li class="hover:text-black transition cursor-pointer">
+              Home
+            </li></router-link
+          >
+          <li class="hover:text-black transition cursor-pointer">About</li>
+          <li class="hover:text-black transition cursor-pointer">Contact Us</li>
+          <li class="hover:text-black transition cursor-pointer">Blog</li>
         </ul>
       </div>
       <div class="flex gap-10">

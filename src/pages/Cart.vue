@@ -1,5 +1,5 @@
 <template>
-  <div class="container grid grid-cols-2 gap-5">
+  <div class="container grid grid-cols-2 gap-5 py-28">
     <div class="space-y-6">
       <p class="text-2xl font-bold">Shopping Cart</p>
       <div
@@ -10,7 +10,7 @@
         <div class="grid grid-cols-12 gap-4">
           <div class="flex items-center col-span-7 gap-5">
             <img :src="product.image" alt="Pro" class="size-22" />
-            <p class="line-clamp-3 font-medium text-sm">{{ product.title }}</p>
+            <b class="line-clamp-3 font-sm">{{ product.title }}</b>
           </div>
           <div class="flex items-center col-span-5 gap-4 justify-between">
             <div class="flex items-center gap-1">
@@ -32,7 +32,7 @@
             </div>
             <b class="text-lg">${{ product.price * product.quantity }}</b>
             <button
-              class="p-2 cursor-pointer"
+              class="cursor-pointer"
               @click="cartStore.deleteFromCart(index)"
             >
               X
@@ -41,9 +41,9 @@
         </div>
       </div>
     </div>
-    <div class="border border-[#EBEBEB] rounded-xl p-15 mt-4">
+    <div class="border border-[#EBEBEB] rounded-xl p-15">
       <div class="space-y-5">
-        <p class="text-xl font-bold">Order Summary</p>
+        <p class="text-xl font-bold mb-5">Order Summary</p>
         <div>
           <p class="text-[#545454]">Discount code / Promo code</p>
           <input
@@ -61,7 +61,7 @@
               placeholder="Enter Card Number"
             />
             <button
-              class="absolute border py-2 px-6 rounded-md top-2.5 right-4"
+              class="absolute border py-2 px-6 rounded-md top-2.5 right-4 cursor-pointer"
             >
               <p class="text-sm">Apply</p>
             </button>
@@ -87,6 +87,11 @@
             <div class="font-bold">${{ cartStore.totalPrice }}</div>
           </div>
         </div>
+        <button
+          class="bg-black w-full py-4 rounded-md text-white mt-5 cursor-pointer"
+        >
+          Checkout
+        </button>
       </div>
     </div>
   </div>
