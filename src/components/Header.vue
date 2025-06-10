@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
-</script>
-
 <template>
   <header class="py-4 border border-[#B5B5B5]">
     <div class="flex items-center justify-between container">
@@ -23,14 +19,14 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
 
       <div>
         <ul class="flex gap-15 text-gray-400 font-medium">
-          <router-link to="/"
-            ><li class="hover:text-black transition cursor-pointer">
-              Home
-            </li></router-link
+          <li
+            class="hover:text-black transition cursor-pointer"
+            v-for="item in navigationLinks"
           >
-          <li class="hover:text-black transition cursor-pointer">About</li>
-          <li class="hover:text-black transition cursor-pointer">Contact Us</li>
-          <li class="hover:text-black transition cursor-pointer">Blog</li>
+            <router-link :to="item.link" active-class="text-black">{{
+              item.title
+            }}</router-link>
+          </li>
         </ul>
       </div>
       <div class="flex gap-10">
@@ -43,3 +39,26 @@ import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
     </div>
   </header>
 </template>
+
+<script setup lang="ts">
+import { Heart, Search, ShoppingCart, User } from 'lucide-vue-next';
+
+const navigationLinks = [
+  {
+    title: 'Home',
+    link: '/',
+  },
+  {
+    title: 'About',
+    link: '/about',
+  },
+  {
+    title: 'Contact Us',
+    link: '/contacts',
+  },
+  {
+    title: 'Blog',
+    link: '/blog',
+  },
+];
+</script>

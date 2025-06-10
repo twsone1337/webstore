@@ -20,9 +20,9 @@
           />
         </div>
         <div class="col-span-6 space-y-5">
-          <p class="text-3xl font-bold">Apple iPhone 14 Pro Max</p>
+          <p class="text-3xl font-bold">{{ product.title }}</p>
           <div class="flex gap-5 items-center">
-            <p class="text-2xl">$1399</p>
+            <p class="text-2xl">${{ product.price }}</p>
             <p class="line-through text-[#A0A0A0] text-xl">$1499</p>
           </div>
           <div class="flex gap-5 items-center">
@@ -76,17 +76,20 @@
           </div>
           <div>
             <p class="text-[#6C6C6C] text-[14px] leading-6">
-              Enhanced capabilities thanks toan enlarged display of 6.7
-              inchesand work without rechargingthroughout the day. Incredible
-              photosas in weak, yesand in bright lightusing the new systemwith
-              two cameras <b class="underline underline-offset-2">more...</b>
+              {{ product.description }}
+              <b class="underline underline-offset-2">more...</b>
             </p>
           </div>
           <div class="grid grid-cols-2 gap-5">
-            <button class="bg-[#FFFFFF] border py-4 px-18 rounded">
+            <button
+              class="bg-[#FFFFFF] border py-4 px-18 rounded cursor-pointer"
+            >
               <p>Add to Wishlist</p>
             </button>
-            <button class="bg-black border py-4 px-18 rounded">
+            <button
+              class="bg-black border py-4 px-18 rounded cursor-pointer"
+              @click="addToCartFromProduct"
+            >
               <p class="text-white">Add to Cart</p>
             </button>
           </div>
@@ -106,8 +109,9 @@
     </div>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 import { useCartStore } from '@/stores/cart';
+import { Product } from '@/types/products';
 import {
   BatteryMedium,
   Camera,
@@ -119,8 +123,12 @@ import {
   Truck,
 } from 'lucide-vue-next';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-const { cart, addToCart } = useCartStore();
+type Props = {
+  product: Product;
+};
+const { product } = defineProps<Props>();
 
 const colors = [
   {
@@ -208,5 +216,12 @@ const shopIcons = [
 const selectedColor = ref(0);
 const selectedImage = ref(0);
 const selectedCapacity = ref(0);
-console.log(selectedColor.value);
+
+const cartStore = useCartStore();
+const router = useRouter();
+
+const addToCartFromProduct = () => {
+  cartStore.addToCart(product);
+  router.push('/cart');
+};
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/single"
+  <router-link :to="`/store/${product.id}`"
     ><div class="bg-[#F6F6F6] relative px-10 pb-6 pt-18">
       <Heart class="text-[#909090C4] opacity-[77%] absolute top-5 right-5" />
       <div class="text-center">
