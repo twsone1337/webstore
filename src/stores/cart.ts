@@ -3,11 +3,9 @@ import { computed, ref } from 'vue';
 
 export const useCartStore = defineStore('cart', () => {
   const cart = ref([]);
+
   const totalPrice = computed(() => {
-    return cart.value.reduce(
-      (acc, curr) => acc + curr.price * curr.quantity,
-      0
-    );
+    return cart.value.reduce((acc, item) => acc + item.price * item.quantity, 0);
   });
 
   function addToCart(product) {

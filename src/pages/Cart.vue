@@ -3,7 +3,7 @@
     <div class="space-y-6 p-4">
       <p class="text-2xl font-bold">Shopping Cart</p>
       <div
-        v-for="(product, index) in cart"
+        v-for="(product, index) in cartStore.cart"
         :key="index"
         class="flex items-center gap-5 border-[#A3A3A3] border-b-[0.5px] py-4 last:border-none"
       >
@@ -16,7 +16,7 @@
             <div class="flex items-center gap-1">
               <button
                 class="p-2 cursor-pointer"
-                @click="decrementQuantity(index)"
+                @click="cartStore.decrementQuantity(index)"
               >
                 -
               </button>
@@ -25,13 +25,13 @@
               </div>
               <button
                 class="p-2 cursor-pointer"
-                @click="incrementQuantity(index)"
+                @click="cartStore.incrementQuantity(index)"
               >
                 +
               </button>
             </div>
             <b class="text-lg">${{ product.price * product.quantity }}</b>
-            <button class="p-2 cursor-pointer" @click="deleteFromCart(index)">
+            <button class="p-2 cursor-pointer" @click="cartStore.deleteFromCart(index)">
               X
             </button>
           </div>
@@ -59,7 +59,7 @@
         </div>
         <div>
           <p>Subtotal</p>
-          <p>Total ${{ totalPrice }}</p>
+          <p>Total ${{ cartStore.totalPrice }}</p>
         </div>
       </div>
     </div>
@@ -69,11 +69,5 @@
 <script setup lang="ts">
 import { useCartStore } from '@/stores/cart';
 
-const {
-  cart,
-  deleteFromCart,
-  incrementQuantity,
-  decrementQuantity,
-  totalPrice,
-} = useCartStore();
+const cartStore = useCartStore();
 </script>
