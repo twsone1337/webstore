@@ -17,6 +17,7 @@ const fetchSingleProduct = async () => {
   const { data } = await axios.get(
     `https://fakestoreapi.com/products/${route.params.id}`
   );
+  console.log(data);
   singleProduct.value = data;
 };
 onMounted(() => {
